@@ -3,7 +3,7 @@ from openpyxl import Workbook
 import re
 
 def Results_Sum(wb, ws, Title):
-    row_title = ['Original_TCID', Title]
+    row_title = ['Original GM TC ID', Title]
     ws.append(row_title)
     j = 0
     for sheet in wb:
