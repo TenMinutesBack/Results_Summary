@@ -21,8 +21,8 @@ def Results_Sum(wb, ws, Title):
 
 
 #--------------------------------------------- Input Settings -------------------------------------------------
-Week = 28
-folder = 'C:\\Users\\Yvonne\\Documents\\Test\\'
+Week = 30
+folder = 'C:\\Users\\Yvonne\\Documents\\Results\\'
 Order = ['Main', 'Production', 'STR']
 #--------------------------------------------------------------------------------------------------------------
 
@@ -30,7 +30,7 @@ Order = ['Main', 'Production', 'STR']
 output = Workbook()
 for Line_Name in Order:
     Title = 'W' + str(Week) + '_' + Line_Name
-    wb =  load_workbook(folder + Title +'_Sorted.xlsx')
+    wb =  load_workbook(folder + '\\Sorted\\' + Title +'_Sorted.xlsx')
     ws = output.create_sheet(Line_Name)
     Results_Sum(wb, ws, Title)
-output.save(folder + '2021_W' + str(Week) + '.xlsx')
+output.save(folder + '\\All\\2021_W' + str(Week) + '.xlsx')
