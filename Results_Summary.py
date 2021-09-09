@@ -19,15 +19,15 @@ def Results_Sum(wb, ws, name):
 
 
 #--------------------------------------------- Input Settings -------------------------------------------------
-Week = 35
+Week = 36
 folder = 'C:\\Users\\Yvonne\\Documents\\Results\\'
-Order = ['Main', 'STR', 'SORP']
-Auto = [0, 1, 1]
+Order = ['Main', 'STR','SORP']
+Auto = [1, 1, 0]
 #--------------------------------------------------------------------------------------------------------------
 
 
 output = Workbook()
-for k in range(3):
+for k in range(len(Order)):
     print(k)
     Line_Name = Order[k]
     Title = 'W' + str(Week) + '_' + Line_Name
