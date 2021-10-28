@@ -19,7 +19,7 @@ def Results_Sum(wb, ws, name):
 
 
 #--------------------------------------------- Input Settings -------------------------------------------------
-Week = 36
+Week = 43
 folder = 'C:\\Users\\Yvonne\\Documents\\Results\\'
 Order = ['Main', 'STR','SORP']
 Auto = [1, 1, 0]
