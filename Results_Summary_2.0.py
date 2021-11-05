@@ -3,12 +3,18 @@ from openpyxl import Workbook
 import re
 import glob
 
+#--------------------------------------------- Input Settings -------------------------------------------------
+Week = 45
+folder = 'C:\\Users\\Yvonne\\Documents\\Results'
+Order = ['Main', 'STR','SORP']
+#--------------------------------------------------------------------------------------------------------------
+
 def Results_Sum(wb, ws, path):
     j = 0
     for sheet in wb:
         print()
         i = 0
-        if sheet.title == 'Case need update'or sheet.title == 'Summary' or sheet.title == 'Sheet':
+        if sheet.title == 'Case need update'or sheet.title == 'Summary' or sheet.title == 'summary' or sheet.title == 'Sheet':
             break
         for row in sheet.iter_rows(min_row=2, max_col=7, values_only=True):
             if not row[0] is None:
@@ -20,14 +26,6 @@ def Results_Sum(wb, ws, path):
      + '\nFrom ' + path\
      + '\nTotal:' + str(j)\
      + '\n=====================================================================================\n')
-
-
-#--------------------------------------------- Input Settings -------------------------------------------------
-Week = 45
-folder = 'C:\\Users\\Yvonne\\Documents\\Results'
-Order = ['Main', 'STR','SORP']
-#--------------------------------------------------------------------------------------------------------------
-
 
 output = Workbook() # Result Summary
 for Line_Name in Order:
