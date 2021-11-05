@@ -12,7 +12,6 @@ Order = ['Main', 'STR','SORP']
 def Results_Sum(wb, ws, path):
     j = 0
     for sheet in wb:
-        print()
         i = 0
         if sheet.title == 'Case need update'or sheet.title == 'Summary' or sheet.title == 'summary' or sheet.title == 'Sheet':
             break
