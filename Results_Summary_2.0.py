@@ -4,9 +4,10 @@ import re
 import glob
 
 #--------------------------------------------- Input Settings -------------------------------------------------
-Week = 45
+year = 2022
+Week = 11
 folder = 'C:\\Users\\Yvonne\\Documents\\Results'
-Order = ['Main', 'STR','SORP']
+Order = ['SORP_Resume','Main_Cold']
 #--------------------------------------------------------------------------------------------------------------
 
 def Results_Sum(wb, ws, path):
@@ -29,13 +30,13 @@ def Results_Sum(wb, ws, path):
 output = Workbook() # Result Summary
 for Line_Name in Order:
     print('# ' + Line_Name + ' #')
-    Title = 'W' + str(Week) + '_' + Line_Name
+    Title = 'W' + str(Week).zfill(2) + '_' + Line_Name
     ws = output.create_sheet(Line_Name) # create sheet for each line
     row_title = ['Original GM TC ID', Title] 
     ws.append(row_title) # add title
 
-    files = glob.glob(folder + '\\Sorted\\' + Title +'_**.xlsx', recursive = True)
+    files = glob.glob(folder + '\\Sorted\\' + Title +'**.xlsx', recursive = True)
     for xls in files :
         wb =  load_workbook(xls)
         Results_Sum(wb, ws, xls)
-output.save(folder + '\\All\\2021_W' + str(Week) + '.xlsx')
+output.save(folder + '\\All\\' + str(year) + '_W' + str(Week).zfill(2) + '.xlsx')
